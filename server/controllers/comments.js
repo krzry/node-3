@@ -18,16 +18,15 @@ function create(req, res) {
 
 function updateById(req,res){
 	const db = req.app.get('db')
-	const { comment,userId } = req.body
+	const { comment } = req.body
 	db.comments
 	.update({
-    postId:req.params.post_id,
-		id:req.params.comment_id
+    id:req.params.comment_id,
+    postId:req.params.post_id
 	},{
-    userId:userId,
 		comment:comment
 	})
-	.then(post => res.status(201).send(post))
+	.then(comment => res.status(201).send(comment))
 	.catch(err => {
 		console.err(err)
 		res.status(500).end()

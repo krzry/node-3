@@ -25,11 +25,12 @@ massive({
 // POSTS
   app.post('/api/posts', posts.create); // Create a post
   app.get('/api/posts', posts.list); // Get all posts
-  app.get('/api/posts/:id', posts.getById);  //Get post by id
-  app.put('/api/posts/:id', posts.updateById);
+  app.get('/api/posts/:id', posts.getById);  //Get post by Id
+  app.put('/api/posts/:id', posts.updateById); //Update post by postId
 // COMMENTS
-  app.post('/api/:postid', comments.create); // Create a comment
-  app.put('/api/:post_id/:comment_id', comments.updateById);
+  app.post('/api/:postid/comment', comments.create); // Create a comment
+  app.put('/api/:post_id/:comment_id', comments.updateById); //Update a comment by postId and commentId
+
   const PORT = 3003;
   app.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
