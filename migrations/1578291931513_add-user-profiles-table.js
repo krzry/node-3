@@ -18,7 +18,7 @@ exports.up = pgm => {
     },
     thumbnail: {
       type: 'text',
-    },
+    }
   });
 };
 
